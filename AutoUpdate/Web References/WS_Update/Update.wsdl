@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllUpdateInfosCompressed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUpdateInfosCompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUpdateInfosCompressedResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFileCompressed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateInfos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="softname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="filepath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bin" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="time" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFileCompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileCompressedResult" type="tns:UpdateInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileCompressed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fpath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileCompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileCompressedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllUpdateInfosCompressedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUpdateInfosCompressed" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUpdateInfosCompressedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUpdateInfosCompressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileCompressedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileCompressed" />
+  </wsdl:message>
+  <wsdl:message name="GetFileCompressedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileCompressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileCompressedSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFileCompressed" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileCompressedSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileCompressedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UpdateSoap">
+    <wsdl:operation name="GetAllUpdateInfosCompressed">
+      <wsdl:input message="tns:GetAllUpdateInfosCompressedSoapIn" />
+      <wsdl:output message="tns:GetAllUpdateInfosCompressedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileCompressed">
+      <wsdl:input message="tns:GetFileCompressedSoapIn" />
+      <wsdl:output message="tns:GetFileCompressedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileCompressed">
+      <wsdl:input message="tns:UploadFileCompressedSoapIn" />
+      <wsdl:output message="tns:UploadFileCompressedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UpdateSoap" type="tns:UpdateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllUpdateInfosCompressed">
+      <soap:operation soapAction="http://tempuri.org/GetAllUpdateInfosCompressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileCompressed">
+      <soap:operation soapAction="http://tempuri.org/GetFileCompressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileCompressed">
+      <soap:operation soapAction="http://tempuri.org/UploadFileCompressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UpdateSoap12" type="tns:UpdateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllUpdateInfosCompressed">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUpdateInfosCompressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileCompressed">
+      <soap12:operation soapAction="http://tempuri.org/GetFileCompressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileCompressed">
+      <soap12:operation soapAction="http://tempuri.org/UploadFileCompressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Update">
+    <wsdl:port name="UpdateSoap" binding="tns:UpdateSoap">
+      <soap:address location="http://172.21.128.66/WebUpdate/Update.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UpdateSoap12" binding="tns:UpdateSoap12">
+      <soap12:address location="http://172.21.128.66/WebUpdate/Update.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

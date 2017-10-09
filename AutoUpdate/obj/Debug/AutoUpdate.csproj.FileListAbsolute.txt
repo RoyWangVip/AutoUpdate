@@ -1,0 +1,8 @@
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\obj\Debug\AutoUpdate.Properties.Resources.resources
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\obj\Debug\AutoUpdate.UploadForm.resources
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\obj\Debug\AutoUpdate.csproj.GenerateResource.Cache
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\bin\Debug\AutoUpdate.exe
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\bin\Debug\AutoUpdate.pdb
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\obj\Debug\AutoUpdate.exe
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\obj\Debug\AutoUpdate.pdb
+C:\Users\roy.wang\Desktop\11111\AutoUpdate\AutoUpdate\bin\Debug\AutoUpdateXml.xml

@@ -1,0 +1,13 @@
+﻿<NewDataSet>
+  <equipmentTypeTable>
+    <TYPE_NO>Amada</TYPE_NO>
+  </equipmentTypeTable>
+  <equipmentTypeTable>
+    <TYPE_NO>Tailifu-T34</TYPE_NO>
+  </equipmentTypeTable>
+  <equipmentTypeTable>
+    <TYPE_NO>Tailifu-T36</TYPE_NO>
+  </equipmentTypeTable>
+  <!--刀具看板显示的条数-->
+  <KanbanNumber>10</KanbanNumber>
+</NewDataSet>
